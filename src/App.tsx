@@ -134,14 +134,14 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#FCFCFC] font-sans">
-      <header className="bg-white border-b border-zinc-200 px-8 py-[18px] flex items-center">
+      <header className="h-[82px] bg-white border-b border-zinc-200 flex items-center px-10">
         <img src={bannerSvg} alt="Haptic" className="h-10" />
       </header>
 
-      <div className="max-w-[1100px] mx-auto px-8 py-7">
-        <div className="flex gap-7 items-start">
+      <div className="w-full max-w-[1440px] mx-auto px-10 py-8">
+        <div className="grid grid-cols-[1fr_320px] gap-10 items-start">
           <div className="flex flex-col flex-1 min-w-0">
-            <p className="text-[#4A41C4] text-[13px] font-medium mb-3">
+            <p className="text-[#4A41C4] text-[14px] font-medium mb-5">
               {!file
                 ? "Aguardando arquivo..."
                 : processing
@@ -152,7 +152,7 @@ export default function App() {
             </p>
 
             <div
-              className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#EEEEED]"
+              className="relative w-full aspect-video rounded-2xl overflow-hidden bg-[#EEEEED] shadow-sm"
               onMouseEnter={() => !file && setHovering(true)}
               onMouseLeave={() => setHovering(false)}
               onDragOver={(e) => {
@@ -281,7 +281,7 @@ export default function App() {
             </div>
 
             {file && !processing && (
-              <div className="flex items-center gap-2.5 mt-3.5">
+              <div className="flex items-center gap-3 mt-5">
                 <button
                   onClick={() => {
                     setFile(null);
@@ -303,7 +303,7 @@ export default function App() {
             )}
           </div>
 
-          <div className="shrink-0 w-[260px] flex flex-col gap-3 mt-7">
+          <div className="w-[320px] flex flex-col gap-4 pt-8">
             <div className="flex items-center gap-2">
               <div
                 className={`w-2 h-2 rounded-full shrink-0 transition-colors ${
@@ -318,7 +318,7 @@ export default function App() {
               </span>
             </div>
 
-            <div className="bg-white rounded-2xl border border-zinc-100 px-4 pt-5 pb-5 flex flex-col items-center shadow-sm min-h-[450px]">
+            <div className="bg-white rounded-[28px] border border-zinc-200 px-7 py-7 flex flex-col items-center shadow-sm min-h-[520px]">
               {!processing ? (
                 <>
                   <p className="text-[13px] text-zinc-500 text-center leading-relaxed mb-3">
